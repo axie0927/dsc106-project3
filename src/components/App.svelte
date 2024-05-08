@@ -1,5 +1,14 @@
 <script>
   // Write your JS here, or import other files
+  import * as d3 from 'd3';
+
+  d3.csv('ghg-emissions-by-sector.csv', function(error, vCsvData) {
+        if (error) throw error;
+
+        vData = d3.stratify()(vCsvData);
+        drawViz(vData);
+  });
+
 </script>
 
 <main>
