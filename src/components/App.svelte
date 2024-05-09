@@ -3,21 +3,22 @@
   import * as d3 from 'd3';
 
   let data;
+  let selectedYear = 1990;
 
   onMount(async () => {
-      // Load data from the static folder
+      await loadData();
+  });
+
+  async function loadData() {
       const response = await fetch('country.json');
       const allData = await response.json();
 
-      // Extract emissions data for the year 2010
-      data = allData.find(item => item.year === 2010);
+      data = allData.find(item => item.year === selectedYear);
 
-      // Extract unique sectors and assign colors
       const sectors = data.children.map(d => d.name);
       const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
                            .domain(sectors);
 
-      // Create treemap using D3
       const width = 1400;
       const height = 1000;
 
@@ -96,9 +97,20 @@
          .style('font-weight', 'bold')
          .style('font-size', '14px')
          .style('fill', 'black');
+  }
 
-  });
+  function handleYearChange() {
+      selectedYear = parseInt(document.getElementById('yearDropdown').value);
+      loadData();
+  }
+
 </script>
+
+<select id="yearDropdown" onchange="handleYearChange()">
+  {#each Array.from({ length: 2011 - 1990 }, (_, i) => 1990 + i) as year}
+    <option value={year}>{year}</option>
+  {/each}
+</select>
 
 <svg id="treemap"></svg>
 
