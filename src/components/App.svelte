@@ -146,10 +146,46 @@
 
 </script>
 
+<div style="margin-bottom: 20px;">
+  <input id="slider" type="range" min="1990" max="2020" step="1" value="1990" list="markers" style="width: 1400px;"/>
+
+  <datalist id="markers">
+    <option value="1990" label="1990"></option>
+    <option value="1991" label="1991"></option>
+    <option value="1992" label="1992"></option>
+    <option value="1993" label="1993"></option>
+    <option value="1994" label="1994"></option>
+    <option value="1995" label="1995"></option>
+    <option value="1996" label="1996"></option>
+    <option value="1997" label="1997"></option>
+    <option value="1998" label="1998"></option>
+    <option value="1999" label="1999"></option>
+    <option value="2000" label="2000"></option>
+    <option value="2001" label="2001"></option>
+    <option value="2002" label="2002"></option>
+    <option value="2003" label="2003"></option>
+    <option value="2004" label="2004"></option>
+    <option value="2005" label="2005"></option>
+    <option value="2006" label="2006"></option>
+    <option value="2007" label="2007"></option>
+    <option value="2008" label="2008"></option>
+    <option value="2009" label="2009"></option>
+    <option value="2010" label="2010"></option>
+    <option value="2011" label="2011"></option>
+    <option value="2012" label="2012"></option>
+    <option value="2013" label="2013"></option>
+    <option value="2014" label="2014"></option>
+    <option value="2015" label="2015"></option>
+    <option value="2016" label="2016"></option>
+    <option value="2017" label="2017"></option>
+    <option value="2018" label="2018"></option>
+    <option value="2019" label="2019"></option>
+    <option value="2020" label="2020"></option>
+  </datalist>
+
+</div>
+
 <svg id="treemap"></svg>
-
-
-<input id="slider" type="range" min="1990" max="2020" step="1" value="1990"/>
 
 <style>
   .tooltip {
@@ -159,6 +195,23 @@
       border-width: 2px;
       border-radius: 5px;
       padding: 5px;
+  }
+
+  datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 1400px;
+  }
+
+  option {
+    padding: 0;
+  }
+
+  input[type="range"] {
+    width: 200px;
+    margin: 0;
   }
 
 </style>
