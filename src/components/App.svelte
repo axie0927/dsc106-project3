@@ -60,7 +60,7 @@
       const mousemove = function(event, d) {
           Tooltip.html(`Country: ${d.data.name}<br>Greenhouse Emission: ${d.value/1000000} Million Tons `)
                  .style('left', (event.x) + 20 + "px")
-                 .style('top', (event.y) + "px")
+                 .style('top', (event.y + window.pageYOffset) + "px")
       };
 
       const mouseleave = function(event, d) {
