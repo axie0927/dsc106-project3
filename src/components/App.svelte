@@ -99,18 +99,6 @@
          .style('font-size', '14px')
          .style('fill', 'black');
 
-      // Create country titles (will be changed later)
-      //svg.selectAll('.country-title')
-      //    .data(root.leaves())
-      //    .enter()
-      //    .append('text')
-      //    .attr('class', 'country-title')
-      //    .attr('x', d => d.x0 + 5) 
-      //    .attr('y', d => d.y0 + 15) 
-      //    .text(d => d.data.name)
-      //    .style('font-size', '12px') 
-      //    .style('fill', 'black'); 
-
       // Here is the listener that updates the year
       
       document.getElementById('slider')
